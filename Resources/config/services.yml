@@ -1,0 +1,10 @@
+services:
+    nfq_soap.data_collector:
+        class: Nfq\Bundle\SoapBundle\DataCollector\SoapDataCollector
+        tags:
+            - { name: data_collector, template: '@NfqSoap/Collector/soap.html.twig', id: 'nfq_soap' }
+            - { name: kernel.event_listener, event: nfq_soap.request_finished, method: onRequestFinished }
+
+    nfq_soap.factory:
+        class: Nfq\Bundle\SoapBundle\Factory
+        arguments: ["@event_dispatcher"]
