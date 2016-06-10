@@ -46,14 +46,16 @@ $client = $container->get('nfq_soap.factory')->create($wsdl);
 ```yml
 # Old Way
 services:
-    class: SoapClient
-    arguments: ["%wsdl_url%"]
+    old_soap_client:
+        class: SoapClient
+        arguments: ["%wsdl_url%"]
 
 # New Way
 services:
-    class: SoapClient
-    factory: ["@nfq_soap.factory", create]
-    arguments: ["%wsdl_url%"]
+    new_soap_client:
+        class: SoapClient
+        factory: ["@nfq_soap.factory", create]
+        arguments: ["%wsdl_url%"]
 ```
 
 ## License
