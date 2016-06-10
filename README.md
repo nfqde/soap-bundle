@@ -1,4 +1,4 @@
-SoapBundle
+SoapBundle [![Build Status](https://travis-ci.org/nfqde/soap-bundle.svg?branch=master)](https://travis-ci.org/nfqde/soap-bundle)
 ==========
 
 SoapBundle provides functionality for PHP SoapClient to be traceable by Symfony WebProfiler.
