@@ -9,14 +9,13 @@ services:
         class: Nfq\Bundle\SoapBundle\Factory
         arguments: ["@event_dispatcher"]
 
-    pretty_xml.formatter:
+    nfq_soap.pretty_xml_formatter:
         class: PrettyXml\Formatter
         public: false
 
-    pretty_xml.formatter.twig_extension:
-        class: Nfq\Bundle\SoapBundle\Twig\FormatterExtension
-        arguments:
-            - "@pretty_xml.formatter"
+    nfq_soap.twig.soap_extension:
+        class: Nfq\Bundle\SoapBundle\Twig\SoapExtension
+        arguments: ["@nfq_soap.pretty_xml_formatter"]
         public: false
         tags:
             - { name: twig.extension }
