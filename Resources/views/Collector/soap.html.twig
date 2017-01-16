@@ -124,12 +124,12 @@
                         <td>
                             <a href="#" class="sf-toggle link-inverse text-small" data-toggle-selector="#soap-request-headers-{{ loop.index }}" data-toggle-alt-content="Hide headers"{{ profiler_markup_version == 1 ? 'onclick="return toggle(this);"' }}>Show headers</a>
                             <div id="soap-request-headers-{{ loop.index }}" class="hidden sf-toggle-content">{{ request.request_headers|nl2br }}</div>
-                            <div>{{ request.request_body|nl2br }}</div>
+                            <pre>{{ request.request_body|formatxml }}</pre>
 
                             <a href="#" class="sf-toggle link-inverse text-small" data-toggle-selector="#soap-response-{{ loop.index }}" data-toggle-alt-content="Hide response"{{ profiler_markup_version == 1 ? 'onclick="return toggle(this);"' }}>Show response</a>
                             <div id="soap-response-{{ loop.index }}" class="hidden sf-toggle-content soap-response-container">
                                 <div style="margin-bottom: 15px;">{{ request.response_headers|nl2br }}</div>
-                                <div>{{ request.response_body }}</div>
+                                <pre>{{ request.response_body|formatxml }}</pre>
                             </div>
                         </td>
                     </tr>
