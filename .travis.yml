@@ -6,16 +6,18 @@ cache:
 
 php:
   - 5.3
-  - 5.4
-  - 5.5
   - 5.6
   - 7.0
+  - 7.1
   - hhvm
 
 matrix:
   fast_finish: true
   include:
     - php: 5.3
+      dist: precise
+    - php: 5.3
+      dist: precise
       env: COMPOSER_FLAGS="--prefer-lowest" SYMFONY_DEPRECATIONS_HELPER=weak
     # Test against Symfony LTS versions
     - php: 5.6
@@ -23,19 +25,17 @@ matrix:
     - php: 5.6
       env: SYMFONY_VERSION="2.7.*"
     - php: 5.6
-      env: SYMFONY_VERSION="2.8.*" DEPENDENCIES=dev
+      env: SYMFONY_VERSION="2.8.*"
+    - php: 7.1
+      env: SYMFONY_VERSION="2.8.*"
     - php: 5.6
-      env: SYMFONY_VERSION="3.0.*"
-    - php: 5.6
-      env: SYMFONY_VERSION="3.2.*"
-    - php: 7.0
-      env: SYMFONY_VERSION="3.0.*"
-    - php: 7.0
-      env: SYMFONY_VERSION="3.2.*"
+      env: SYMFONY_VERSION="3.4.*"
+    - php: 7.1
+      env: SYMFONY_VERSION="3.4.*"
     # Test against dev versions
     - php: 5.6
       env: DEPENDENCIES=dev
-    - php: 7.0
+    - php: 7.1
       env: DEPENDENCIES=dev
   allow_failures:
     - env: DEPENDENCIES=dev
