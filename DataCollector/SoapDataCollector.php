@@ -29,11 +29,7 @@ class SoapDataCollector extends DataCollector
      */
     public function __construct()
     {
-        $this->data = array(
-            'total' => 0,
-            'time' => 0,
-            'requests' => array(),
-        );
+        $this->reset();
     }
 
     /**
@@ -50,6 +46,18 @@ class SoapDataCollector extends DataCollector
     public function getName()
     {
         return 'nfq_soap';
+    }
+
+    /**
+     * Resets this data collector to its initial state.
+     */
+    public function reset()
+    {
+        $this->data = array(
+            'total' => 0,
+            'time' => 0,
+            'requests' => array(),
+        );
     }
 
     /**
