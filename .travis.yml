@@ -4,12 +4,6 @@ cache:
   directories:
     - $HOME/.composer/cache/files
 
-php:
-  - 5.6
-  - 7.0
-  - 7.1
-  - hhvm
-
 matrix:
   fast_finish: true
   include:
@@ -25,14 +19,16 @@ matrix:
       env: SYMFONY_VERSION="2.7.*"
     - php: 5.6
       env: SYMFONY_VERSION="2.8.*"
-    - php: 7.1
+    - php: 7.3
       env: SYMFONY_VERSION="2.8.*"
-    - php: 7.1
+    - php: 7.3
       env: SYMFONY_VERSION="3.4.*"
+    - php: 7.3
+      env: SYMFONY_VERSION="4.3.*"
     # Test against dev versions
     - php: 5.6
       env: DEPENDENCIES=dev
-    - php: 7.1
+    - php: 7.3
       env: DEPENDENCIES=dev
   allow_failures:
     - env: DEPENDENCIES=dev
